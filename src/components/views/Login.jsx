@@ -13,7 +13,14 @@ const Login = () => {
   
   const onSubmit = (usuario)=>{
     // console.log(usuario)
-    login(usuario);
+    login(usuario).then((respuesta)=>{
+      if(respuesta){
+        //debo loguear al usuario 
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta))
+      }else{
+        //indicar datos erroneos al usuario
+      }
+    })
   }
 
   return (
