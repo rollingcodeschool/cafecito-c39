@@ -12,8 +12,8 @@ const Login = () => {
 
   
   const onSubmit = (usuario)=>{
-    console.log(usuario)
-    login();
+    // console.log(usuario)
+    login(usuario);
   }
 
   return (
