@@ -88,6 +88,7 @@ const CrearProducto = () => {
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
+            
           </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
