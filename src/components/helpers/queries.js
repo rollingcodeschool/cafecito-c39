@@ -47,3 +47,14 @@ export const obtenerProductos = async()=>{
         console.log(error)
     }
 } 
+
+export const consultaBorrarProducto = async(id)=>{
+    try{
+        const respuesta = await fetch(`${URL_Producto}/${id}`, {
+            method: "DELETE"
+        });
+        return respuesta;
+    }catch (error){
+        console.log(error);
+    }
+}
