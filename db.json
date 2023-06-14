@@ -16,10 +16,11 @@
       "id": 2
     },
     {
-      "categoria": "bebida caliente",
+      "categoria": "dulce",
+      "descripcion": "alguna descripcion",
       "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      "nombreProducto": "medialuna 2",
-      "precio": 34,
+      "nombreProducto": " medialuna con jamon y queso",
+      "precio": 300,
       "id": 3
     },
     {
@@ -37,8 +38,8 @@
       "id": 5
     },
     {
-      "nombreProducto": "brownie",
-      "precio": "250",
+      "nombreProducto": "brownie nuevo",
+      "precio": "350",
       "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "categoria": "dulce",
       "id": 6
