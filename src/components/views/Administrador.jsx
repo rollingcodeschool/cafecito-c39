@@ -3,6 +3,7 @@ import ItemProducto from "./producto/ItemProducto";
 import { useEffect, useState } from "react";
 import { obtenerProductos } from "../helpers/queries";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Administrador = () => {
 
@@ -11,8 +12,12 @@ const Administrador = () => {
   useEffect(()=>{
     obtenerProductos().then((respuesta)=>{
       console.log(respuesta)
-      setProductos(respuesta);
-      // todo: resolver la situacion cuando no puedo realizar la conexion a la API
+      if(respuesta){
+        setProductos(respuesta);
+        // todo: resolver la situacion cuando no puedo realizar la conexion a la API
+      }else{
+        Swal.fire('Error al buscar productos', 'no se pueden mostrar los productos intentelo luego', 'error')
+      }
     })
   },[])
 
