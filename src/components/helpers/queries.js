@@ -91,6 +91,7 @@ export const consultaEditarProducto = async(producto, id)=>{
             },
             body: JSON.stringify(producto)
         });
+        console.log(respuesta)
         return respuesta;
     }catch (error){
         console.log(error);
