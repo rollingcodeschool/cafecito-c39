@@ -17,7 +17,7 @@ const Login = ({setUsuarioLogueado}) => {
   const onSubmit = (usuario)=>{
     // console.log(usuario)
     login(usuario).then((respuesta)=>{
-      if(respuesta){
+      if(respuesta.status === 200 ){
         //debo loguear al usuario 
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
