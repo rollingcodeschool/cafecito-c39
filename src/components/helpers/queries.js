@@ -26,12 +26,10 @@ export const login = async (usuario) =>{
         usuario: datos.nombre,
         uid: datos.uid
       };
-
-    
     
     } catch (error) {
       console.log("errores en el login");
-      return;
+      return null;
     }
   }
 

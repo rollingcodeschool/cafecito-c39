@@ -42,7 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
                 ...register('email',{
                   required: 'El email es obligatorio',
                   pattern:{
-                    value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                     message: 'El email debe contener @ y terminar . com/es/com.ar u otra terminacion'
                   }
                 })
