@@ -24,7 +24,8 @@ export const login = async (usuario) =>{
         status: respuesta.status,
         mensaje: datos.mensaje,
         usuario: datos.nombre,
-        uid: datos.uid
+        uid: datos.uid,
+        token:datos.token
       };
     
     } catch (error) {
@@ -86,7 +87,8 @@ export const obtenerProducto = async(id)=>{
 export const consultaBorrarProducto = async(id)=>{
     try{
         const respuesta = await fetch(`${URL_Producto}/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
         });
         return respuesta;
     }catch (error){
@@ -98,7 +100,8 @@ export const consultaCrearProducto = async(producto)=>{
         const respuesta = await fetch(URL_Producto, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
             },
             body: JSON.stringify(producto)
         });
@@ -112,7 +115,8 @@ export const consultaEditarProducto = async(producto, id)=>{
         const respuesta = await fetch(URL_Producto+'/'+id, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
             },
             body: JSON.stringify(producto)
         });
