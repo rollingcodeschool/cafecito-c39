@@ -88,7 +88,9 @@ export const consultaBorrarProducto = async(id)=>{
     try{
         const respuesta = await fetch(`${URL_Producto}/${id}`, {
             method: "DELETE",
-            "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+            headers: {
+                "x-token": JSON.parse(sessionStorage.getItem('usuario')).token
+            }
         });
         return respuesta;
     }catch (error){
