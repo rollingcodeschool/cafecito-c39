@@ -17,7 +17,7 @@ const Login = ({setUsuarioLogueado}) => {
   const onSubmit = (usuario)=>{
     // console.log(usuario)
     login(usuario).then((respuesta)=>{
-      if(respuesta){
+      if(respuesta.status === 200 ){
         //debo loguear al usuario 
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
@@ -42,7 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
                 ...register('email',{
                   required: 'El email es obligatorio',
                   pattern:{
-                    value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                     message: 'El email debe contener @ y terminar . com/es/com.ar u otra terminacion'
                   }
                 })
